@@ -1,0 +1,9 @@
+pandas
+plotly
+kaleido
+python-pptx
+
+# For test
+mypy
+coverage
+flake8
