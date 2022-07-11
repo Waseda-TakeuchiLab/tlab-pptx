@@ -120,6 +120,7 @@ def add_figure(
         showlegend=False,
         template="simple_white"
     )
+    fig.update_traces(line=dict(width=0.7))
     fig.update_xaxes(ticks="inside", mirror=True, showline=True)
     fig.update_yaxes(ticks="inside", mirror=True, showline=True)
     with io.BytesIO(fig.to_image("png", scale=10)) as f:
