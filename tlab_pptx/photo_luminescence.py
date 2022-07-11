@@ -45,7 +45,7 @@ class Presentation(abstract.AbstractPresentation):
     excitation_power: int
     time_range: int
     center_wavelength: int
-    FWHM: int
+    FWHM: float
     frame: int
     date: datetime.date
     h_fig: go.Figure
@@ -68,31 +68,31 @@ class Presentation(abstract.AbstractPresentation):
         common.add_figure(slide, self.v_fig, 12.33, 5.0)
         common.add_text(
             slide,
-            f"Excitation wavelength : {self.excitation_wavelength} nm\n"
-            f"Excitation power : {self.excitation_power} mW\n"
-            f"Time range : {self.time_range} ns\n",
+            f"Excitation wavelength : {int(self.excitation_wavelength):d} nm\n"
+            f"Excitation power : {int(self.excitation_power):d} mW\n"
+            f"Time range : {int(self.time_range):d} ns\n",
             2.33,
             2.5
         )
         common.add_text(
             slide,
-            f"Center wavelength : {self.center_wavelength} nm\n"
-            f"FWHM : {self.FWHM} nm\n"
-            f"Frame : {self.frame}\n",
+            f"Center wavelength : {int(self.center_wavelength):d} nm\n"
+            f"FWHM : {self.FWHM:.2g} nm\n"
+            f"Frame : {int(self.frame):d}\n",
             14.33,
             2.5
         )
         common.add_text(
             slide,
-            f"a : b = {self.a} : {self.b}",
+            f"a : b = {int(self.a):d} : {int(self.b):d}",
             14.33,
             17.0,
             font_name="Cambria Math",
         )
         common.add_text(
             slide,
-            f"τ₁ = {self.tau1} ns\n"
-            f"τ₂ = {self.tau2} ns\n",
+            f"τ₁ = {self.tau1:.2g} ns\n"
+            f"τ₂ = {self.tau2:.2g} ns\n",
             19.33,
             17.0,
             font_name="Cambria Math",
