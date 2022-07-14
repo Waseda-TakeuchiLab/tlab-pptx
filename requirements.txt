@@ -1,7 +1,7 @@
-pandas
-plotly
-kaleido
-python-pptx
+pandas>=1.4.3
+plotly>=5.9.0
+kaleido>=0.2.1
+python-pptx>=0.6.21
 
 # For test
 mypy
